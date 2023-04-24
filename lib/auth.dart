@@ -204,7 +204,9 @@ class AuthProvider extends ChangeNotifier {
         .get()
         .then((DocumentSnapshot snapshot) {
       _reqModel = ReqModel(
-        userName: snapshot['name'],
+          name: snapshot['name'],
+          price: snapshot['price'],
+        userName: snapshot['userName'],
         createdAt: snapshot['createdAt'],
         address: snapshot['address'],
         desc: snapshot['desc'],
@@ -220,7 +222,6 @@ class AuthProvider extends ChangeNotifier {
   }
 
 
-
   void saveReqToFirebase({
     required BuildContext context,
     required ReqModel reqModel,
@@ -228,7 +229,7 @@ class AuthProvider extends ChangeNotifier {
     required Function onSuccess,
   }) async {
     try {
-      if (reqPic == null) {
+      if (reqModel == null || reqPic == null) {
         // Handle invalid input
         return;
       }
@@ -287,7 +288,9 @@ class AuthProvider extends ChangeNotifier {
         .then((DocumentSnapshot snapshot) {
           print(_firebaseAuth.currentUser!.phoneNumber);
       _reqModel = ReqModel(
-          userName: snapshot['name'],
+          name: snapshot['name'],
+          userName: snapshot['userName'],
+          price: snapshot['price'],
           createdAt: snapshot['createdAt'],
           address: snapshot['address'],
           desc: snapshot['desc'],

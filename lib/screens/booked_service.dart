@@ -91,149 +91,145 @@ class _bookedServiceState extends State<bookedService> {
 
             itemCount: reqList.length,
             itemBuilder: (context, index) {
-             var userName= reqList[index].userName;
-             var proPhoneNumber=reqList[index].proPhoneNumber;
-            var proName=reqList[index].proName;
-            var proPic=reqList[index].proPic;
-            var work=reqList[index].work;
-            var desc=reqList[index].desc;
-            var reqPic=reqList[index].reqPic;
-            var createdAt=reqList[index].createdAt;
-              return   Container(
-              padding: EdgeInsets.only(top: 30, left: 16, right: 16),
-              child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-              Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-              // IconButton(
-              //   icon: Icon(Icons.arrow_back),
-              //   onPressed: () {},
-              // ),
-              // Text(
-              // 'Booked Service',
-              // style: TextStyle(
-              // fontSize: 24,
-              // fontWeight: FontWeight.bold,
-              // ),
-              // ),
-              SizedBox(
-              width: 40,
-              ),
-              ],
-              ),
-              SizedBox(height: 32),
-              Row(
-              children: [
-                Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: NetworkImage(reqList[index].proPic ?? 'https://example.com/default-image.jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
+    var userName= reqList[index].userName;
+    var proPhoneNumber=reqList[index].proPhoneNumber;
+    var proName=reqList[index].proName;
+    var proPic=reqList[index].proPic;
 
-                SizedBox(width: 16),
-              Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-              Text(
-              '$proName',
-              style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              ),
-              ),
-              SizedBox(height: 8),
-              Text(
-              '$proPhoneNumber',
-              style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              ),
-              ),
-              ],
-              ),
-              ],
-              ),
-              SizedBox(height: 40),
-              Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-              Text(
-              'Service Type',
-              style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              ),
-              ),
-              Text(
-              '$work',
-              style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey[600],
-              ),
-              ),
-              ],
-              ),
-              SizedBox(height: 16),
-              Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-              Text(
-              'Service Price',
-              style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              ),
-              ),
-              Text(
-              'Rs 599',
-              style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey[600],
-              ),
-              ),
-              ],
-              ),
-              SizedBox(height: 16),
-              Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-              Text(
-              'Service Date',
-              style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              ),
-              ),
-              Text(
-              '$createdAt',
-              style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey[600],
-              ),
-              ),
-              ],
-              ),
-              ],
-              ),
-              );
-            },
-          );
-        },
-      ),
+    var desc=reqList[index].desc;
+    var reqPic=reqList[index].reqPic;
+    var createdAt=reqList[index].createdAt;
+    var price=reqList[index].price;
+    var work=reqList[index].work;
+    return SafeArea(
+    child: Container(
+    padding: EdgeInsets.only(top: 30, left: 16, right: 16),
+    child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+    // IconButton(
+    //   icon: Icon(Icons.arrow_back),
+    //   onPressed: () {},
+    // ),
+
+    SizedBox(
+    width: 40,
+    ),
+    ],
+    ),
+    SizedBox(height: 32),
+    Row(
+    children: [
+    Container(
+    width: 80,
+    height: 80,
+    decoration: BoxDecoration(
+    shape: BoxShape.circle,
+    image: DecorationImage(
+    image: NetworkImage('$proPic'),
+    fit: BoxFit.cover,
+    ),
+    ),
+    ),
+    SizedBox(width: 16),
+    Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    Text(
+    '$proName',
+    style: TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    ),
+    ),
+    SizedBox(height: 8),
+    Text(
+    '$proPhoneNumber',
+    style: TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    ),
+    ),
+    ],
+    ),
+    ],
+    ),
+    SizedBox(height: 40),
+    Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+    Text(
+    'Service Type',
+    style: TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    ),
+    ),
+    Text(
+    '$work',
+    style: TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.grey[600],
+    ),
+    ),
+    ],
+    ),
+    SizedBox(height: 16),
+    Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+    Text(
+    'Service Price',
+    style: TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    ),
+    ),
+    Text(
+    '$price',
+    style: TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.grey[600],
+    ),
+    ),
+    ],
+    ),
+    SizedBox(height: 16),
+    Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+    Text(
+    'Service Date',
+    style: TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    ),
+    ),
+    Text(
+    '$createdAt',
+    style: TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    color: Colors.grey[600],
+    ),
+    ),
+
+    ],
+    ),
+      SizedBox(height: 25,),
+      Divider(height: 10,thickness: 4
+        ,color: Colors.grey,indent: 65,endIndent: 65,)
+    ],
+    ),
+    ),
     );
-  }
-}
+    } );
+    }
+    ));
 
-
-
+    }}

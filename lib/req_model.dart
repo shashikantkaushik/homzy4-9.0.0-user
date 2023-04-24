@@ -9,6 +9,8 @@ class ReqModel {
   String pin;
   String work;
   String userPic;
+  String name;
+  int price;
 
   ReqModel({
     required this.pin,
@@ -21,6 +23,8 @@ class ReqModel {
     required this.userPhoneNumber,
     required this.userUid,
     required this.work,
+    required this.name,
+    required this.price
 
   });
 
@@ -38,6 +42,8 @@ class ReqModel {
       userPhoneNumber: map['userPhoneNumber'] ?? '',
       createdAt: map['createdAt'] ?? '',
       reqPic: map['reqPic'] ?? '',
+      name: map['name'] ?? '',
+      price: map['price'] ?? '',
 
     );
   }
@@ -57,6 +63,8 @@ class ReqModel {
       "desc":desc,
       "pin":pin,
       "userPic":userPic,
+      "name":name,
+      "price":price,
     };
   }
 }

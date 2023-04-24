@@ -206,6 +206,7 @@ class _UserInfromationScreenState extends State<UserInfromationScreen> {
         userModel: userModel,
         profilePic: image!,
         onSuccess: () {
+          print("hlo");
           ap.saveUserDataToSP().then(
                 (value) => ap.setSignIn().then(
                       (value) => Navigator.pushAndRemoveUntil(

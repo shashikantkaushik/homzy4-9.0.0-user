@@ -1,163 +1,212 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-//import 'package:homzy1/screens/respose.dart';
-import 'package:homzy1/auth.dart';
-import 'package:provider/provider.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:homzy1/booked_model.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:upi_india/upi_india.dart';
 
+void main() => runApp(MyApp());
 
-import 'package:shared_preferences/shared_preferences.dart';
-class bookSubPage extends StatefulWidget {
+class MyApp extends StatelessWidget {
   @override
-  State<bookSubPage> createState() => _bookSubPageState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Test UPI',
+      home: HomePage(),
+    );
+  }
 }
 
-class _bookSubPageState extends State<bookSubPage> {
-  late FirebaseFirestore _firebaseFirestore;
-  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  //final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  Future<UpiResponse>? _transaction;
+  UpiIndia _upiIndia = UpiIndia();
+  List<UpiApp>? apps;
+
+  TextStyle header = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+  );
+
+  TextStyle value = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 14,
+  );
 
   @override
   void initState() {
-    print("init");
+    _upiIndia.getAllUpiApps(mandatoryTransactionId: false).then((value) {
+      setState(() {
+        apps = value;
+      });
+    }).catchError((e) {
+      apps = [];
+    });
     super.initState();
-    _firebaseFirestore = FirebaseFirestore.instance;
   }
-  Widget build(BuildContext context) {
-    final ap = Provider.of<AuthProvider>(context,listen: false);
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.only(top: 30, left: 16, right: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // IconButton(
-                  //   icon: Icon(Icons.arrow_back),
-                  //   onPressed: () {},
-                  // ),
-                  Text(
-                    'Booked Service',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 40,
-                  ),
-                ],
-              ),
-              SizedBox(height: 32),
-              Row(
-                children: [
-                  Container(
-                    width: 80,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        image: AssetImage('assets/images/spa.png'),
-                        fit: BoxFit.cover,
+
+  Future<UpiResponse> initiateTransaction(UpiApp app) async {
+    return _upiIndia.startTransaction(
+      app: app,
+      receiverUpiId: "9078600498@ybl",
+      receiverName: 'Md Azharuddin',
+      transactionRefId: 'TestingUpiIndiaPlugin',
+      transactionNote: 'Not actual. Just an example.',
+      amount: 1.00,
+    );
+  }
+
+  Widget displayUpiApps() {
+    if (apps == null)
+      return Center(child: CircularProgressIndicator());
+    else if (apps!.length == 0)
+      return Center(
+        child: Text(
+          "No apps found to handle transaction.",
+          style: header,
+        ),
+      );
+    else
+      return Align(
+        alignment: Alignment.topCenter,
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Wrap(
+            children: apps!.map<Widget>((UpiApp app) {
+              return GestureDetector(
+                onTap: () {
+                  _transaction = initiateTransaction(app);
+                  setState(() {});
+                },
+                child: Container(
+                  height: 100,
+                  width: 100,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.memory(
+                        app.icon,
+                        height: 60,
+                        width: 60,
                       ),
-                    ),
-                  ),
-                  SizedBox(width: 16),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Ankit Dhattarwal',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        '7015216280',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      Text(app.name),
                     ],
                   ),
-                ],
-              ),
-              SizedBox(height: 40),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Service Type',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    'Plumber',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Service Price',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    'Rs 599',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Service Date',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    'Mon, 32 Jun',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey[600],
-                    ),
-                  ),
-                ],
-              ),
-            ],
+                ),
+              );
+            }).toList(),
           ),
         ),
+      );
+  }
+
+  String _upiErrorHandler(error) {
+    switch (error) {
+      case UpiIndiaAppNotInstalledException:
+        return 'Requested app not installed on device';
+      case UpiIndiaUserCancelledException:
+        return 'You cancelled the transaction';
+      case UpiIndiaNullResponseException:
+        return 'Requested app didn\'t return any response';
+      case UpiIndiaInvalidParametersException:
+        return 'Requested app cannot handle the transaction';
+      default:
+        return 'An Unknown error has occurred';
+    }
+  }
+
+  void _checkTxnStatus(String status) {
+    switch (status) {
+      case UpiPaymentStatus.SUCCESS:
+        print('Transaction Successful');
+        break;
+      case UpiPaymentStatus.SUBMITTED:
+        print('Transaction Submitted');
+        break;
+      case UpiPaymentStatus.FAILURE:
+        print('Transaction Failed');
+        break;
+      default:
+        print('Received an Unknown transaction status');
+    }
+  }
+
+  Widget displayTransactionData(title, body) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text("$title: ", style: header),
+          Flexible(
+              child: Text(
+                body,
+                style: value,
+              )),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('UPI'),
+      ),
+      body: Column(
+        children: <Widget>[
+          Expanded(
+            child: displayUpiApps(),
+          ),
+          Expanded(
+            child: FutureBuilder(
+              future: _transaction,
+              builder: (BuildContext context, AsyncSnapshot<UpiResponse> snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text(
+                        _upiErrorHandler(snapshot.error.runtimeType),
+                        style: header,
+                      ), // Print's text message on screen
+                    );
+                  }
+
+                  // If we have data then definitely we will have UpiResponse.
+                  // It cannot be null
+                  UpiResponse _upiResponse = snapshot.data!;
+
+                  // Data in UpiResponse can be null. Check before printing
+                  String txnId = _upiResponse.transactionId ?? 'N/A';
+                  String resCode = _upiResponse.responseCode ?? 'N/A';
+                  String txnRef = _upiResponse.transactionRefId ?? 'N/A';
+                  String status = _upiResponse.status ?? 'N/A';
+                  String approvalRef = _upiResponse.approvalRefNo ?? 'N/A';
+                  _checkTxnStatus(status);
+
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        displayTransactionData('Transaction Id', txnId),
+                        displayTransactionData('Response Code', resCode),
+                        displayTransactionData('Reference Id', txnRef),
+                        displayTransactionData('Status', status.toUpperCase()),
+                        displayTransactionData('Approval No', approvalRef),
+                      ],
+                    ),
+                  );
+                } else
+                  return Center(
+                    child: Text(''),
+                  );
+              },
+            ),
+          )
+        ],
       ),
     );
   }

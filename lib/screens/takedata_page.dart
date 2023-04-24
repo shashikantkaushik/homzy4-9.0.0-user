@@ -10,10 +10,15 @@ import 'dart:io' show Platform;
 import 'package:provider/provider.dart';
 import 'package:homzy1/req_model.dart';
 class LocationScreen extends StatefulWidget {
- // final String work;
-   LocationScreen(
-       //required this.work
-       );
+  final String name;
+  final int price;
+  const LocationScreen({
+    Key? key,
+    required this.name,
+    required this.price,
+  }) : super(key: key);
+
+
   @override
   _LocationScreenState createState() => _LocationScreenState();
 }
@@ -41,7 +46,9 @@ class _LocationScreenState extends State<LocationScreen> {
   Widget build(BuildContext context) {
 
     void storeData({
-      required int work
+      required int price,
+      required String work,
+
     }
     ) async {
       final ap = Provider.of<AuthProvider>(context, listen: false);
@@ -51,11 +58,15 @@ class _LocationScreenState extends State<LocationScreen> {
         address: addressController.text.trim(),
         pin: pinController.text.trim(),
         reqPic:" ",
+        name: widget.name,
+        price: price,
         createdAt: "",
         userPhoneNumber: ap.userModel.phoneNumber,
         userUid:ap.userModel.uid,
-        work: "fg",
+        work: work,
         userPic: ap.userModel.profilePic
+
+
       );
 
       if (image != null) {
@@ -128,6 +139,7 @@ print("asdfhlk ks");
                   border: OutlineInputBorder(),
                 ),
               ),
+
               SizedBox(height: 16.0),
               Text(
                 'Enter PIN Code',
@@ -194,14 +206,25 @@ print("asdfhlk ks");
               SizedBox(height: 16.0),
               Row(
                 children: <Widget>[
-                  Expanded(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        print(addressController);
-                        storeData(work: 1);
-                      },
-                      child: Text('Submit'),
+                  InkWell(
+                    onTap: (){
+                      print(widget.name);
+                      print(widget.price);
+                      storeData( work:widget.name, price:widget.price);
+                    },
+                    child: Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          print(widget.name);
+                          print(widget.price);
+
+                          storeData(work:widget.name,price:widget.price);
+                        },
+                        child: Text('Submit'),
+
+                      ),
                     ),
+
                   ),
                 ],
               ),

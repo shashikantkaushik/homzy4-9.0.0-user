@@ -152,41 +152,39 @@ class _ProfileState extends State<Profile> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home:Scaffold(
-appBar: AppBar(
-elevation: 0,
-  shadowColor: Colors.white,
+            appBar: AppBar(
+                elevation: 0,
+                shadowColor: Colors.white,
 
 
 
 
-  centerTitle: false,
-backgroundColor: Colors.transparent,
+                centerTitle: false,
+                backgroundColor: Colors.transparent,
 
-  leading:
-    ElevatedButton(
-      onPressed: (){
+                leading:
+                ElevatedButton(
+                  onPressed: (){
 
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const HomeScreen(),
-          ),
-        );
-      },
-      style: ButtonStyle(
+                    Navigator.pop(
+                      context,
 
-        foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-        backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-        shadowColor:MaterialStateProperty.all<Color>(Colors.transparent),
+                    );
+                  },
+                  style: ButtonStyle(
 
-      ),
-      child:Icon(Icons.arrow_back_ios),
+                    foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                    shadowColor:MaterialStateProperty.all<Color>(Colors.transparent),
 
-    )
+                  ),
+                  child:Icon(Icons.arrow_back_ios),
+
+                )
 
 
-)
-,
+            )
+            ,
             body:SafeArea(
                 child:SingleChildScrollView(
                   child: Column(
@@ -219,10 +217,10 @@ backgroundColor: Colors.transparent,
 
 
                         Card(
-                          shadowColor: Colors.white, shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(100),
-                              side: BorderSide(width: 0,style: BorderStyle.solid)
-                            ),
+                            shadowColor: Colors.white, shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(100),
+                            side: BorderSide(width: 0,style: BorderStyle.solid)
+                        ),
                             margin:EdgeInsets.symmetric(vertical:10,
                                 horizontal:25),
                             color:Colors.white,
@@ -238,7 +236,7 @@ backgroundColor: Colors.transparent,
                                     fontSize: 13,
                                     fontWeight:FontWeight.bold,
                                   )),
-                          )
+                            )
                         ),
 
                         Card(shadowColor: Colors.white, shape: RoundedRectangleBorder(
@@ -246,7 +244,7 @@ backgroundColor: Colors.transparent,
                             side: BorderSide(width: 0,style: BorderStyle.solid)
                         ),
                             margin:EdgeInsets.symmetric(vertical:10,
-                            horizontal:25),
+                                horizontal:25),
                             child: ListTile(
                                 leading: Icon(Icons.email,
                                     color:Color(0xFFC5C6d0)),
@@ -261,26 +259,26 @@ backgroundColor: Colors.transparent,
                         ),
 
                         Card(elevation: 10,
-                          margin:EdgeInsets.symmetric(vertical:10,
-                              horizontal:25),
-                          color:Colors.white,
+                            margin:EdgeInsets.symmetric(vertical:10,
+                                horizontal:25),
+                            color:Colors.white,
                             child: ListTile(
                                 leading: Icon(Icons.help,
                                     color:Colors.black),
                                 title:GestureDetector(
                                   onTap: (){
                                     dynamic conversationObject = {
-                            'appId': '$kchatbot',// The [APP_ID](https://dashboard.kommunicate.io/settings/install) obtained from kommunicate dashboard.
-                            };
+                                      'appId': '$kchatbot',// The [APP_ID](https://dashboard.kommunicate.io/settings/install) obtained from kommunicate dashboard.
+                                    };
 
-                            KommunicateFlutterPlugin.buildConversation(conversationObject)
-                                .then((clientConversationId) {
+                                    KommunicateFlutterPlugin.buildConversation(conversationObject)
+                                        .then((clientConversationId) {
 
-                            print("Conversation builder success : " + clientConversationId.toString());
-                            }).catchError((error) {
-                            print("Conversation builder error : " + error.toString());
-                            });
-                            },
+                                      print("Conversation builder success : " + clientConversationId.toString());
+                                    }).catchError((error) {
+                                      print("Conversation builder error : " + error.toString());
+                                    });
+                                  },
                                   child: Text('Help',
                                       style:TextStyle(
                                         color:Colors.black,
@@ -292,27 +290,27 @@ backgroundColor: Colors.transparent,
                                 )
                             )
                         ),
-                       SizedBox(
-                         height: 50,
-                       ),
+                        SizedBox(
+                          height: 50,
+                        ),
 
-                       SizedBox(
-                         height: 50,
-                         width: 200,
-                         child: CustomButton(
-                           text:'Log Out',
-                           onPressed:(){
-                             ap.userSignOut().then(
-                                   (value) => Navigator.push(
-                                 context,
-                                 MaterialPageRoute(
-                                   builder: (context) => const WelcomeScreen(),
-                                 ),
-                               ),
-                             );
-                           },
-                         ),
-                       ),
+                        SizedBox(
+                          height: 50,
+                          width: 200,
+                          child: CustomButton(
+                            text:'Log Out',
+                            onPressed:(){
+                              ap.userSignOut().then(
+                                    (value) => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const WelcomeScreen(),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
                         SizedBox(
                           height: 60,
                         ),

@@ -40,7 +40,16 @@ class _PaymentState extends State<Payment> {
 
 
 
-
+  Future<UpiResponse> initiateTransaction(UpiApp app) async {
+    return _upiIndia.startTransaction(
+      app: app,
+      receiverUpiId: "9078600498@ybl",
+      receiverName: 'Md Azharuddin',
+      transactionRefId: 'TestingUpiIndiaPlugin',
+      transactionNote: 'Not actual. Just an example.',
+      amount: 1.00,
+    );
+  }
   Widget displayUpiApps() {
     if (apps == null)
       return Center(child: CircularProgressIndicator());
@@ -141,6 +150,11 @@ class _PaymentState extends State<Payment> {
   //  final upi=(ap.;
 
     final name=(ap.userModel.name);
+    final userphoneNumber=(ap.userModel.phoneNumber);
+    // final name=(ap.userModel.);
+    // final name=(ap.userModel.name);
+    // final name=(ap.userModel.name);
+    // final name=(ap.userModel.name);
 
 
 
@@ -155,7 +169,19 @@ class _PaymentState extends State<Payment> {
       );
     }
 
-    void storeData({  String ?txnId, String ?resCode, String ?txnRef, String ?status, String ?approvalRef}) async {
+    void storeData({
+      required txnId,
+   required resCode,
+      required txnRef,
+      required status,
+      required approvalRef,
+      required upi,
+      required userName,
+      required userPhoneNumber,
+      required proName,
+      required proPhoneNumber
+
+    }) async {
       final ap = Provider.of<AuthProvider>(context, listen: false);
       PayModel payModel = PayModel(
           txnId: txnId!,
@@ -221,7 +247,7 @@ class _PaymentState extends State<Payment> {
                   String status = _upiResponse.status ?? 'N/A';
                   String approvalRef = _upiResponse.approvalRefNo ?? 'N/A';
                   _checkTxnStatus(status);
-     storeData(txnId:txnId,resCode: resCode, txnRef: txnRef, status:  status, approvalRef: approvalRef);
+     //storeData(txnId:txnId,resCode: resCode, txnRef: txnRef, status:  status, approvalRef: approvalRef);
 
     return Padding(
                     padding: const EdgeInsets.all(8.0),
