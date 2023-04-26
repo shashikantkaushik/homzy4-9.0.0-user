@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/SwipeCellKit.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		kywxIKp+271tLPCSTP5SCBLxYF4=
+		BTu0usDSga+1hKvAAam5ypHfRME=
 		</data>
 		<key>Modules/SwipeCellKit.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		NeHfAS06g4a254iI9e1Xk1W6x9w=
+		+zpjH3mFyes536N1N1KvGdQhuNM=
 		</data>
 		<key>Modules/SwipeCellKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -81,22 +81,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kywxIKp+271tLPCSTP5SCBLxYF4=
+			BTu0usDSga+1hKvAAam5ypHfRME=
 			</data>
 			<key>hash2</key>
 			<data>
-			q4sS1DnWSlnkl7EEZXw3IQlcUhyrfSmQjMRBj3ess+8=
+			kr2gUxfJMRvbE5SuT88JXR5xziX1vILuZXKwECnwhfw=
 			</data>
 		</dict>
 		<key>Modules/SwipeCellKit.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NeHfAS06g4a254iI9e1Xk1W6x9w=
+			+zpjH3mFyes536N1N1KvGdQhuNM=
 			</data>
 			<key>hash2</key>
 			<data>
-			5wPQKO2m6bezXv1QFtSuTdp6xK/X6Yj9idYGH+tTwuM=
+			ph/nKTib+nG/Vq90WbTGyYdHUlzY4/ALVDPe0a1cT+Y=
 			</data>
 		</dict>
 		<key>Modules/SwipeCellKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>

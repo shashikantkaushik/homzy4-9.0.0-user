@@ -7,6 +7,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:homzy1/booked_model.dart';
 import 'package:homzy1/req_model.dart';
+import 'package:homzy1/screens/home_screen.dart';
 import 'package:homzy1/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:homzy1/user_model.dart';
@@ -52,6 +53,36 @@ class AuthProvider extends ChangeNotifier {
     _isSignedIn = true;
     notifyListeners();
   }
+
+  //
+  void move(String phoneNumber,context) async {
+    final sourceCollection = FirebaseFirestore.instance.collection('book');
+    final destinationCollection = FirebaseFirestore.instance.collection(
+        'moved');
+
+    final sourceDocSnapshot = await sourceCollection.doc(phoneNumber).get();
+
+    if (sourceDocSnapshot.exists) {
+      final sourceDocData = sourceDocSnapshot.data();
+
+      // Add the document to the destination collection with phone number as document ID
+      await destinationCollection.doc(phoneNumber).set(sourceDocData!);
+
+      // Delete the document from the source collection
+      await sourceCollection.doc(phoneNumber).delete();
+      print('Document with phone number $phoneNumber moved successfully!');
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+      );
+
+    } else {
+      print(
+          'Document with phone number $phoneNumber does not exist in the request collection!');
+    }
+  }
+
+
 
   // signin
   void signInWithPhone(BuildContext context, String phoneNumber) async {

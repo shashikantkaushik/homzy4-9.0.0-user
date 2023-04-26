@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:homzy1/auth.dart';
+
+import 'package:geolocator/geolocator.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
@@ -287,7 +290,7 @@ class _HomeScreenState extends State<HomeScreen> {
                      //mainAxisAlignment: MainAxisAlignment.start,
                       //textDirection: TextDirection.ltr,
                       children: [
-                        Text("shashi"),
+
                         Text('${Address}',textAlign: TextAlign.left,),
                   Text('${Address2}',textAlign: TextAlign.left,),
                       ],

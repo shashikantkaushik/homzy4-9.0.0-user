@@ -7,8 +7,21 @@ import 'package:homzy1/payment_model.dart';
 import 'package:homzy1/screens/home_screen.dart';
 import 'package:homzy1/booked_model.dart';
 class Payment extends StatefulWidget {
+  final String upi;
+  final String name;
+  final int price;
+  const Payment({
+    super.key,
+    required this.upi,
+    required this.name,
+    required this.price
+  });
   @override
-  _PaymentState createState() => _PaymentState();
+  _PaymentState createState() => _PaymentState(
+
+
+
+  );
 }
 
 class _PaymentState extends State<Payment> {
@@ -43,11 +56,11 @@ class _PaymentState extends State<Payment> {
   Future<UpiResponse> initiateTransaction(UpiApp app) async {
     return _upiIndia.startTransaction(
       app: app,
-      receiverUpiId: "9078600498@ybl",
-      receiverName: 'Md Azharuddin',
+      receiverUpiId: widget.upi,
+      receiverName: widget.name,
       transactionRefId: 'TestingUpiIndiaPlugin',
       transactionNote: 'Not actual. Just an example.',
-      amount: 1.00,
+      amount: widget.price.toDouble(),
     );
   }
   Widget displayUpiApps() {
@@ -161,11 +174,11 @@ class _PaymentState extends State<Payment> {
     Future<UpiResponse> initiateTransaction(UpiApp app) async {
       return _upiIndia.startTransaction(
         app: app,
-        receiverUpiId: "12@upi",
-        receiverName: '$name',
+        receiverUpiId: widget.upi,
+        receiverName: widget.name,
         transactionRefId: 'TestingUpiIndiaPlugin',
         transactionNote: 'Not actual. Just an example.',
-        amount: 0.00,
+        amount: widget.price.toDouble(),
       );
     }
 
@@ -198,15 +211,11 @@ class _PaymentState extends State<Payment> {
           payModel: payModel,
 
           onSuccess: () {
-            print("asdf1");
-            Navigator.pushAndRemoveUntil(
-                context,
-
-                MaterialPageRoute(
-                  builder: (context) => HomeScreen(),
-                ),
-                    (route) => false);
-            print("asdfhlk ks");
+            ap.move(ap.userModel.phoneNumber, context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen()),
+            );
           }
       );
 

@@ -6,6 +6,7 @@ import 'package:homzy1/screens/edit_profile.dart';
 import 'package:homzy1/screens/about.dart';
 import 'package:provider/provider.dart';
 import 'package:homzy1/screens/WelcomeScreen.dart';
+import 'package:homzy1/screens/history.dart';
 import 'package:homzy1/screens/profile_screen.dart';
 import 'package:homzy1/screens/faq_screen.dart';
 import 'package:kommunicate_flutter/kommunicate_flutter.dart';
@@ -129,36 +130,47 @@ class _SubSettingState extends State<SubSetting> {
               ),
             ),
             SizedBox(height: 20.0),
-            Container(
-              height: 60.0,
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.payment,
-                        color: Colors.purpleAccent,
-                        size: 50.0,
-                      ),
-                      SizedBox(width: 10.0),
-                      Text(
-                        "Payment",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 23.0,
+            InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>  History(),
+                  ),
+
+                );
+              },
+              child: Container(
+                height: 60.0,
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.payment,
+                          color: Colors.purpleAccent,
+                          size: 50.0,
                         ),
-                      ),
-                    ],
-                  ),
-                  // Spacer(),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.black,
-                    size: 24.0,
-                  ),
-                ],
+                        SizedBox(width: 10.0),
+                        Text(
+                          "History",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 23.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                    // Spacer(),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.black,
+                      size: 24.0,
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 20.0),

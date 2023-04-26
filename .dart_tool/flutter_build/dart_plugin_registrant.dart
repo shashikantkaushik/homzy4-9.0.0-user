@@ -10,14 +10,19 @@ import 'package:geocoding_android/geocoding_android.dart';
 import 'package:geolocator_android/geolocator_android.dart';
 import 'package:image_picker_android/image_picker_android.dart';
 import 'package:shared_preferences_android/shared_preferences_android.dart';
+import 'package:url_launcher_android/url_launcher_android.dart';
 import 'package:geocoding_ios/geocoding_ios.dart';
 import 'package:geolocator_apple/geolocator_apple.dart';
 import 'package:image_picker_ios/image_picker_ios.dart';
 import 'package:shared_preferences_foundation/shared_preferences_foundation.dart';
+import 'package:url_launcher_ios/url_launcher_ios.dart';
 import 'package:shared_preferences_linux/shared_preferences_linux.dart';
+import 'package:url_launcher_linux/url_launcher_linux.dart';
 import 'package:geolocator_apple/geolocator_apple.dart';
 import 'package:shared_preferences_foundation/shared_preferences_foundation.dart';
+import 'package:url_launcher_macos/url_launcher_macos.dart';
 import 'package:shared_preferences_windows/shared_preferences_windows.dart';
+import 'package:url_launcher_windows/url_launcher_windows.dart';
 
 @pragma('vm:entry-point')
 class _PluginRegistrant {
@@ -65,6 +70,16 @@ class _PluginRegistrant {
         rethrow;
       }
 
+      try {
+        UrlLauncherAndroid.registerWith();
+      } catch (err) {
+        print(
+          '`url_launcher_android` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+        rethrow;
+      }
+
     } else if (Platform.isIOS) {
       try {
         GeocodingIOS.registerWith();
@@ -106,12 +121,32 @@ class _PluginRegistrant {
         rethrow;
       }
 
+      try {
+        UrlLauncherIOS.registerWith();
+      } catch (err) {
+        print(
+          '`url_launcher_ios` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+        rethrow;
+      }
+
     } else if (Platform.isLinux) {
       try {
         SharedPreferencesLinux.registerWith();
       } catch (err) {
         print(
           '`shared_preferences_linux` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+        rethrow;
+      }
+
+      try {
+        UrlLauncherLinux.registerWith();
+      } catch (err) {
+        print(
+          '`url_launcher_linux` threw an error: $err. '
           'The app may not function as expected until you remove this plugin from pubspec.yaml'
         );
         rethrow;
@@ -138,12 +173,32 @@ class _PluginRegistrant {
         rethrow;
       }
 
+      try {
+        UrlLauncherMacOS.registerWith();
+      } catch (err) {
+        print(
+          '`url_launcher_macos` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+        rethrow;
+      }
+
     } else if (Platform.isWindows) {
       try {
         SharedPreferencesWindows.registerWith();
       } catch (err) {
         print(
           '`shared_preferences_windows` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+        rethrow;
+      }
+
+      try {
+        UrlLauncherWindows.registerWith();
+      } catch (err) {
+        print(
+          '`url_launcher_windows` threw an error: $err. '
           'The app may not function as expected until you remove this plugin from pubspec.yaml'
         );
         rethrow;

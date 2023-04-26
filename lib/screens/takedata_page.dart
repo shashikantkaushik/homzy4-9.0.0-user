@@ -218,7 +218,7 @@ print("asdfhlk ks");
                           print(widget.name);
                           print(widget.price);
 
-                          storeData(work:widget.name,price:widget.price);
+                          storeData(work:widget.name,price:widget.price.toInt());
                         },
                         child: Text('Submit'),
 

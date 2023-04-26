@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 application
-INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:7:4-38:19
+INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:8:4-39:19
 MERGED from [:cloud_firestore] /Users/shashikant/Desktop/homzy2/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
 MERGED from [:cloud_firestore] /Users/shashikant/Desktop/homzy2/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
 MERGED from [:firebase_auth] /Users/shashikant/Desktop/homzy2/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
@@ -13,6 +13,8 @@ MERGED from [:geolocator_android] /Users/shashikant/Desktop/homzy2/build/geoloca
 MERGED from [:geolocator_android] /Users/shashikant/Desktop/homzy2/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-17:19
 MERGED from [:image_picker_android] /Users/shashikant/Desktop/homzy2/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-19:19
 MERGED from [:image_picker_android] /Users/shashikant/Desktop/homzy2/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-19:19
+MERGED from [:url_launcher_android] /Users/shashikant/Desktop/homzy2/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-14:19
+MERGED from [:url_launcher_android] /Users/shashikant/Desktop/homzy2/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-14:19
 MERGED from [com.google.firebase:firebase-auth:21.3.0] /Users/shashikant/.gradle/caches/transforms-3/99c4415c85c41d201ce35622f58fe74c/transformed/jetified-firebase-auth-21.3.0/AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-auth:21.3.0] /Users/shashikant/.gradle/caches/transforms-3/99c4415c85c41d201ce35622f58fe74c/transformed/jetified-firebase-auth-21.3.0/AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.android.recaptcha:recaptcha:18.0.1] /Users/shashikant/.gradle/caches/transforms-3/59517f06981e5b5cb615dca3722f90c1/transformed/jetified-recaptcha-18.0.1/AndroidManifest.xml:7:5-20
@@ -93,11 +95,11 @@ MERGED from [de.hdodenhof:circleimageview:2.2.0] /Users/shashikant/.gradle/cache
 	android:name
 		INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml
 manifest
-ADDED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-39:12
-INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-39:12
-INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-39:12
-INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-39:12
-MERGED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-39:12
+ADDED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-40:12
+INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-40:12
+INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-40:12
+INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-40:12
+MERGED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-40:12
 MERGED from [:kommunicate_flutter] /Users/shashikant/Desktop/homzy2/build/kommunicate_flutter/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:cloud_firestore] /Users/shashikant/Desktop/homzy2/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
 MERGED from [:firebase_auth] /Users/shashikant/Desktop/homzy2/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
@@ -106,6 +108,7 @@ MERGED from [:firebase_core] /Users/shashikant/Desktop/homzy2/build/firebase_cor
 MERGED from [:geolocator_android] /Users/shashikant/Desktop/homzy2/build/geolocator_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-19:12
 MERGED from [:image_picker_android] /Users/shashikant/Desktop/homzy2/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-21:12
 MERGED from [:flutter_plugin_android_lifecycle] /Users/shashikant/Desktop/homzy2/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:url_launcher_android] /Users/shashikant/Desktop/homzy2/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-16:12
 MERGED from [:smart_auth] /Users/shashikant/Desktop/homzy2/build/smart_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:shared_preferences_android] /Users/shashikant/Desktop/homzy2/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:geocoding_android] /Users/shashikant/Desktop/homzy2/build/geocoding_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
@@ -200,14 +203,14 @@ INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/debug/AndroidMani
 		INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/debug/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-39:12
+		ADDED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-40:12
 		INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/debug/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:2:5-51
 		ADDED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:2:5-51
 	android:versionCode
 		INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-39:12
+		ADDED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:1-40:12
 		INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:1:11-69
@@ -219,6 +222,10 @@ uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:5:5-80
 	android:name
 		ADDED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:5:22-78
+uses-permission#android.permission.QUERY_ALL_PACKAGES
+ADDED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:6:5-76
+	android:name
+		ADDED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml:6:22-74
 uses-sdk
 INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/shashikant/Desktop/homzy2/android/app/src/main/AndroidManifest.xml
@@ -239,6 +246,8 @@ MERGED from [:image_picker_android] /Users/shashikant/Desktop/homzy2/build/image
 MERGED from [:image_picker_android] /Users/shashikant/Desktop/homzy2/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] /Users/shashikant/Desktop/homzy2/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] /Users/shashikant/Desktop/homzy2/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] /Users/shashikant/Desktop/homzy2/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] /Users/shashikant/Desktop/homzy2/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:smart_auth] /Users/shashikant/Desktop/homzy2/build/smart_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:smart_auth] /Users/shashikant/Desktop/homzy2/build/smart_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:shared_preferences_android] /Users/shashikant/Desktop/homzy2/build/shared_preferences_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
@@ -525,6 +534,14 @@ ADDED from [:image_picker_android] /Users/shashikant/Desktop/homzy2/build/image_
 		ADDED from [:image_picker_android] /Users/shashikant/Desktop/homzy2/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-72
 	android:name
 		ADDED from [:image_picker_android] /Users/shashikant/Desktop/homzy2/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] /Users/shashikant/Desktop/homzy2/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-13:74
+	android:exported
+		ADDED from [:url_launcher_android] /Users/shashikant/Desktop/homzy2/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-37
+	android:theme
+		ADDED from [:url_launcher_android] /Users/shashikant/Desktop/homzy2/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-71
+	android:name
+		ADDED from [:url_launcher_android] /Users/shashikant/Desktop/homzy2/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-74
 queries
 ADDED from [:upi_india] /Users/shashikant/Desktop/homzy2/build/upi_india/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:15
 MERGED from [io.kommunicate.sdk:kommunicateui:2.6.8] /Users/shashikant/.gradle/caches/transforms-3/79b2ccad5aeb61f4b4456e03d74e9271/transformed/jetified-kommunicateui-2.6.8/AndroidManifest.xml:12:5-16:15
