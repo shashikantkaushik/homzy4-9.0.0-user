@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 import 'package:homzy1/auth.dart';
 import 'package:homzy1/payment_model.dart';
 import 'package:homzy1/screens/home_screen.dart';
-import 'package:homzy1/booked_model.dart';
 class Payment extends StatefulWidget {
   final String upi;
   final String name;
@@ -48,24 +47,28 @@ class _PaymentState extends State<Payment> {
     }).catchError((e) {
       apps = [];
     });
+    print( widget.upi,);
     super.initState();
   }
 
 
 
   Future<UpiResponse> initiateTransaction(UpiApp app) async {
+    print( widget.upi,);
     return _upiIndia.startTransaction(
       app: app,
       receiverUpiId: widget.upi,
+
       receiverName: widget.name,
       transactionRefId: 'TestingUpiIndiaPlugin',
-      transactionNote: 'Not actual. Just an example.',
+      transactionNote: 'Testing Homzy',
       amount: widget.price.toDouble(),
     );
   }
   Widget displayUpiApps() {
     if (apps == null)
       return Center(child: CircularProgressIndicator());
+
     else if (apps!.length == 0)
       return Center(
         child: Text(
@@ -82,7 +85,10 @@ class _PaymentState extends State<Payment> {
             children: apps!.map<Widget>((UpiApp app) {
               return GestureDetector(
                 onTap: () {
+                  print( widget.upi,);
                   _transaction = initiateTransaction(app);
+
+                 print( widget.upi,);
                   setState(() {});
                 },
                 child: Container(
@@ -177,7 +183,7 @@ class _PaymentState extends State<Payment> {
         receiverUpiId: widget.upi,
         receiverName: widget.name,
         transactionRefId: 'TestingUpiIndiaPlugin',
-        transactionNote: 'Not actual. Just an example.',
+        transactionNote: 'Testing Homzy.',
         amount: widget.price.toDouble(),
       );
     }
@@ -203,6 +209,8 @@ class _PaymentState extends State<Payment> {
           status: status!,
           approvalRef:approvalRef!,
       );
+      print( widget.upi,);
+      print( widget.upi,);
 
 
       ap.savePayToFirebase(
@@ -230,6 +238,7 @@ class _PaymentState extends State<Payment> {
         children: <Widget>[
           Expanded(
             child: displayUpiApps(),
+
           ),
           Expanded(
             child: FutureBuilder(
@@ -256,6 +265,7 @@ class _PaymentState extends State<Payment> {
                   String status = _upiResponse.status ?? 'N/A';
                   String approvalRef = _upiResponse.approvalRefNo ?? 'N/A';
                   _checkTxnStatus(status);
+                  print( widget.upi,);
      //storeData(txnId:txnId,resCode: resCode, txnRef: txnRef, status:  status, approvalRef: approvalRef);
 
     return Padding(

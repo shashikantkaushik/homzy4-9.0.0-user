@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-//import 'package:homzy1/screens/respose.dart';
+
 import 'package:homzy1/auth.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:homzy1/booked_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+
 import 'package:homzy1/screens/home_screen.dart';
-import 'package:homzy1/screens/payment_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:homzy1/screens/pay_method.dart';
+
 
 class bookedService extends StatefulWidget {
   @override
@@ -43,8 +43,8 @@ class _bookedServiceState extends State<bookedService> {
     final ap = Provider.of<AuthProvider>(context, listen: false);
     return Scaffold(
         appBar: AppBar(
-          title: Text('Book Requests',style: TextStyle(color: Colors.black),),
-          backgroundColor: Colors.white,
+          title: Text('Book Requests',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+          backgroundColor: Colors.teal,
         ),
         body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
             stream: _firebaseFirestore.collection("book").snapshots(),
@@ -134,15 +134,34 @@ class _bookedServiceState extends State<bookedService> {
                             Row(
                               children: [
                                 Container(
-                                  width: 80,
-                                  height: 80,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: NetworkImage('$proPic'),
-                                      fit: BoxFit.cover,
+                                    width: 80,
+                                    height: 80,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
                                     ),
-                                  ),
+                                    child:Container(
+                                      width: 80,
+                                      height: 80,
+                                      child: ClipOval(
+                                        child: AspectRatio(
+                                          aspectRatio: 1,
+                                          child: FadeInImage(
+                                            placeholder: AssetImage('assets/robot.jpeg'),
+                                            image: NetworkImage('$proPic'),
+                                            fit: BoxFit.cover,
+                                            fadeInDuration: const Duration(milliseconds: 300),
+                                            fadeInCurve: Curves.easeIn,
+                                            fadeOutDuration: const Duration(milliseconds: 100),
+                                            fadeOutCurve: Curves.easeOut,
+                                            imageErrorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
+                                              return const Icon(Icons.error_outline);
+                                            },
+                                          ),
+                                        ),
+                                      ),
+                                    )
+
+
                                 ),
                                 SizedBox(width: 16),
                                 Column(
@@ -254,7 +273,7 @@ class _bookedServiceState extends State<bookedService> {
                                 } else if (platform == TargetPlatform.android) {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => Payment(
+                                    MaterialPageRoute(builder: (context) => payMethod(
                                       upi:upi,price: price,name: proName ,
                                     )),
                                   );
@@ -292,3 +311,6 @@ class _bookedServiceState extends State<bookedService> {
             }));
   }
 }
+
+
+

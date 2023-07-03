@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:homzy1/screens/small_service_page.dart';
 
 class CleaningServiceScreen extends StatelessWidget {
-  Widget SmallService( BuildContext context, String img, String name, String image, int price ,String desc){
+  Widget SmallService( BuildContext context, String img, String name, String image, int price ,String desc,int Time){
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ServiceInfo (name: name, img: Image.asset(image), price: price, desc: desc,)),
+          MaterialPageRoute(builder: (context) => ServiceInfo (name: name, img: Image.asset(image), price: price, desc: desc,Time: Time,)),
         );
       },
 
@@ -78,6 +78,7 @@ class CleaningServiceScreen extends StatelessWidget {
                   "assets/cleaning_service/bathroom_cleaning_poster.jpeg",
                   int.parse("299"),
                   "Our bathroom cleaning service ensures that your bathroom is left sparkling clean and free from germs and bacteria."
+                ,int.parse("30"),
               ),
               SmallService(context,
                   "assets/cleaning_service/kitchen_cleaning.jpeg",
@@ -85,6 +86,7 @@ class CleaningServiceScreen extends StatelessWidget {
                   "assets/cleaning_service/kitchen_cleaner_poster.jpeg",
                   int.parse("399"),
                   "With our kitchen cleaning service, you can enjoy cooking and dining in a clean and healthy environment without worrying about the tedious task of cleaning up afterwards."
+                ,int.parse("20"),
               ),
               SmallService(context,
                   "assets/cleaning_service/sofa_cleaning.jpeg",
@@ -92,6 +94,7 @@ class CleaningServiceScreen extends StatelessWidget {
                   "assets/cleaning_service/sofa_cleaner_poster.jpeg",
                   int.parse("499"),
                   "Our sofa cleaning service uses specialized cleaning methods to remove dirt, stains, and odors from your sofa, leaving it looking and smelling fresh and clean."
+                ,int.parse("40"),
               ),
               SmallService(context,
                   "assets/cleaning_service/carpet_cleaning.webp",
@@ -99,6 +102,7 @@ class CleaningServiceScreen extends StatelessWidget {
                   "assets/cleaning_service/carpet_cleaner_poster.jpeg",
                   int.parse("299"),
                   "Our carpet cleaning service uses advanced cleaning techniques to thoroughly clean and sanitize your carpets, leaving them looking and feeling like new."
+                ,int.parse("50"),
               ),
               SmallService(context,
                   "assets/cleaning_service/garden claening.jpeg",
@@ -106,6 +110,7 @@ class CleaningServiceScreen extends StatelessWidget {
                   "assets/cleaning_service/garden_cleaner_poster.jpeg",
                   int.parse("4555"),
                   "Our garden cleaning service ensures that your outdoor space is left clean, tidy, and free from debris, making it a safe and enjoyable place for you and your family to relax and play."
+                ,int.parse("60"),
               ),
             ],
           ),

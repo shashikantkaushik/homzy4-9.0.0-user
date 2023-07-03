@@ -54,7 +54,6 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  //
   void move(String phoneNumber,context) async {
     final sourceCollection = FirebaseFirestore.instance.collection('book');
     final destinationCollection = FirebaseFirestore.instance.collection(
@@ -66,7 +65,7 @@ class AuthProvider extends ChangeNotifier {
       final sourceDocData = sourceDocSnapshot.data();
 
       // Add the document to the destination collection with phone number as document ID
-      await destinationCollection.doc(phoneNumber).set(sourceDocData!);
+      await destinationCollection.doc().set(sourceDocData!);
 
       // Delete the document from the source collection
       await sourceCollection.doc(phoneNumber).delete();
@@ -172,6 +171,7 @@ class AuthProvider extends ChangeNotifier {
         .get()
         .then((DocumentSnapshot snapshot) {
       _userModel = UserModel(
+        upi: snapshot['upi'],
         name: snapshot['name'],
         email: snapshot['email'],
 
@@ -209,22 +209,22 @@ class AuthProvider extends ChangeNotifier {
 
 
 
-  void resendOTP(BuildContext context, String phoneNumber)async {
-    await _firebaseAuth.verifyPhoneNumber(
-        phoneNumber: phoneNumber,
-        verificationCompleted: (PhoneAuthCredential phoneAuthCredential) async {
-          await _firebaseAuth.signInWithCredential(phoneAuthCredential);
-        },
-        verificationFailed: (error) {
-          throw Exception(error.message);
-        },
-        codeSent: (newVerificationId, forceResendingToken) {
-          _verificationId = newVerificationId;
-          showSnackBar(context, 'OTP sent again');
-        },
-        codeAutoRetrievalTimeout: (verificationId) {}
-    );
-  }
+  // void resendOTP(BuildContext context, String phoneNumber)async {
+  //   await _firebaseAuth.verifyPhoneNumber(
+  //       phoneNumber: phoneNumber,
+  //       verificationCompleted: (PhoneAuthCredential phoneAuthCredential) async {
+  //         await _firebaseAuth.signInWithCredential(phoneAuthCredential);
+  //       },
+  //       verificationFailed: (error) {
+  //         throw Exception(error.message);
+  //       },
+  //       codeSent: (newVerificationId, forceResendingToken) {
+  //         _verificationId = newVerificationId;
+  //         showSnackBar(context, 'OTP sent again');
+  //       },
+  //       codeAutoRetrievalTimeout: (verificationId) {}
+  //   );
+  // }
 
 
 

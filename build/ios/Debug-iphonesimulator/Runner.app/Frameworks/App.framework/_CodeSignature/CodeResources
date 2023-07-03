@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		G48S3t6JjF7z2KNAXU4wwuWHmVs=
+		JFbuheD7sydDUcDWMGLxoxq0KtA=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		N/W96ytSbcqXUlBDtpluxknTylQ=
+		n9sr9zOU2V/Aehu0BXeAusF2k+c=
 		</data>
 		<key>flutter_assets/assets/.DS_Store</key>
 		<data>
-		MWHy5mDKdcI+pLDyVyd7SUphGqQ=
+		spC+D2Az8hZZpGXPjGHocHDUrUw=
 		</data>
 		<key>flutter_assets/assets/1.1.jpeg</key>
 		<data>
@@ -39,6 +39,26 @@
 		<key>flutter_assets/assets/WhatsApp%20Image%202023-03-04%20at%205.00.11%20PM.jpeg</key>
 		<data>
 		m11AtzHvj747byC3N1xvsVDmZrU=
+		</data>
+		<key>flutter_assets/assets/about/ankit.jpeg</key>
+		<data>
+		4ZfaQLZTIChrND9UhsfwUV6wJZs=
+		</data>
+		<key>flutter_assets/assets/about/aporv.png</key>
+		<data>
+		jl/CGmldlUt3h8JlRHPD5WR19WY=
+		</data>
+		<key>flutter_assets/assets/about/khushi.jpeg</key>
+		<data>
+		YejtbradtyI5qhNGcw0CZR78WIw=
+		</data>
+		<key>flutter_assets/assets/about/shashi.jpg</key>
+		<data>
+		UT1XQRhqA2X5AALH9btNyiTrqDA=
+		</data>
+		<key>flutter_assets/assets/about/sir.jpeg</key>
+		<data>
+		h9ab60Kmz1n7+SEBPz+2RX59qQw=
 		</data>
 		<key>flutter_assets/assets/book.png</key>
 		<data>
@@ -244,6 +264,26 @@
 		<data>
 		/HwEwVRzIhUQ+l9DamQyV5Epbmo=
 		</data>
+		<key>flutter_assets/assets/payment_icon/cash_pay-removebg-preview.png</key>
+		<data>
+		3o7P5LH19japVERErM6Ip602OCY=
+		</data>
+		<key>flutter_assets/assets/payment_icon/google_pay.webp</key>
+		<data>
+		f3ig7/7dtrlcctcAM2Sz9/T98f0=
+		</data>
+		<key>flutter_assets/assets/payment_icon/google_pay_3.3-removebg-preview.png</key>
+		<data>
+		uChXjP3Z0UImQSZlLtHlhnmckAM=
+		</data>
+		<key>flutter_assets/assets/payment_icon/master_card-removebg-preview.png</key>
+		<data>
+		AxDPshgc9yYdewc1mutYXGWMO8E=
+		</data>
+		<key>flutter_assets/assets/payment_icon/phone_pay-removebg-preview.png</key>
+		<data>
+		3DgyK9mNtEzBhBVE6cHGn4x8cro=
+		</data>
 		<key>flutter_assets/assets/repair_serivce/electric_main.webp</key>
 		<data>
 		jR4ZU4jeOFqlO+/oieo2D2CXpIM=
@@ -291,6 +331,14 @@
 		<key>flutter_assets/assets/repair_serivce/wire_repair_2.3.jpeg</key>
 		<data>
 		Gnz1wxiTYsPx4O/HctpGnwlANLc=
+		</data>
+		<key>flutter_assets/assets/robot.jpeg</key>
+		<data>
+		qa+JG09jhKs0bumBaTVLxSRfvd4=
+		</data>
+		<key>flutter_assets/assets/roboterror.json</key>
+		<data>
+		Ouk9VGehdvxao7qSMHak9s0iGG0=
 		</data>
 		<key>flutter_assets/assets/salon_men/child_hari_cut.jpeg</key>
 		<data>
@@ -458,7 +506,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		59eCnm4dTXQnYyuZsRqSwUm7h9Y=
+		+WUSvN81FXEE7A/dSHYlVbUBEXs=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -491,7 +539,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dxogPx1Ucd4lLsy1T9e2pE7CDdzNATFKkQK+WxifT3k=
+			7t+VH+T0owJMaFuVIrKzsfHuKI34D/znQBBBCIVTVgc=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -505,7 +553,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WWT8ERxOj41DCSFigFnIYmvpkvUI98ZXpDaHsTjbieY=
+			POv+4Yg6g9JBL0XTjEmV05of1MyOekvLuoWo1MqzZNI=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/1.1.jpeg</key>
@@ -534,6 +582,41 @@
 			<key>hash2</key>
 			<data>
 			oH532R3DDzKg//G0TW6gAPcMMeTLTnOnZvMrlX/FcXI=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/about/ankit.jpeg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ZrUTZmoJdtghgVZGDmbjkGgpsGHEDcslV0UjC78sB7I=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/about/aporv.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bX52gUI4uRATFoqc72JJCyPaOwW3scdCf1Ly6lLYhd4=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/about/khushi.jpeg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wke+slM0aAkEDiZUX4Ke0SIbpg19pz9mT2Mme5D1O6E=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/about/shashi.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IGng/4Iy8vYQb3nOZQsIlx92kZX4mLViVlcgmeDNzgY=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/about/sir.jpeg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			jjtSgH3EnvL2g9uQ5czyzKjxObVPcotsnxz1xph+Sxo=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/book.png</key>
@@ -893,6 +976,41 @@
 			iewZdPFOHK/VQh9OIu0dGQvmAkTJnj+LKnR+fR1H99g=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/payment_icon/cash_pay-removebg-preview.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			azcGKE84AYfM3aF7Hvps5v7wMSn1kUye+wRDyENOfEg=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/payment_icon/google_pay.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			naLLN1yJEkBxIpKwtYb125i31bdmN+s5jScvNziN/pA=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/payment_icon/google_pay_3.3-removebg-preview.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mcQeqvQgj2rajJeESIxFMo9i/h3DeYDkJKERiGxKwL0=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/payment_icon/master_card-removebg-preview.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5662mDfXM/m5SMD9tF6kJt1FqVh9uBPVwYJzv3WuplY=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/payment_icon/phone_pay-removebg-preview.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			h2EA9pl2A+oBWFoabTwWEH2R1Opqmw9XTxB+rAzsE6M=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/repair_serivce/electric_main.webp</key>
 		<dict>
 			<key>hash2</key>
@@ -975,6 +1093,20 @@
 			<key>hash2</key>
 			<data>
 			FgTFOTutqTSA4oOXg7WnPqCWXbdubFviQv/qIKsF1XI=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/robot.jpeg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uwLnX09Y5Wjsvfgx3u5Xpu2nsMN6WDNxDfPN+IrE8LM=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/roboterror.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			StE/iCpxw/MZOR0iU4t7xYIMkLAVRCtIikd1YBNirpc=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/salon_men/child_hari_cut.jpeg</key>
@@ -1268,7 +1400,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RvVlEw9nkhbx5vL0UYdjsz7rARKi9ypfXZu0uBPsbc8=
+			WlZDnntb7RM9rj4z2eHmk/ZBHkPA90ZU6FDfHV6+998=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

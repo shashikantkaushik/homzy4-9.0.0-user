@@ -1,6 +1,4 @@
-//import 'dart:html';
-//import 'dart:js';
-import 'package:homzy1/screens/payment_screen.dart';
+
 import 'package:homzy1/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:homzy1/screens/home_screen.dart';
@@ -117,7 +115,14 @@ print("asdfhlk ks");
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text('Enter Address Details'),
+
+        leading: GestureDetector(
+          onTap: (){
+            Navigator.pop(context);
+          },
+            child: Icon(Icons.arrow_back_ios_outlined,color: Colors.white,)),
+        title: Text('Enter Address Details',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+        backgroundColor: Colors.teal,
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -128,7 +133,7 @@ print("asdfhlk ks");
               SizedBox(height: 16.0),
               Text(
                 'Enter Full Address :',
-                style: TextStyle(fontSize: 16.0),
+                style: TextStyle(fontSize: 17.0,fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8.0),
               TextField(
@@ -140,10 +145,10 @@ print("asdfhlk ks");
                 ),
               ),
 
-              SizedBox(height: 16.0),
+              SizedBox(height: 17.0),
               Text(
-                'Enter PIN Code',
-                style: TextStyle(fontSize: 16.0),
+                'Enter PIN Code :',
+                style: TextStyle(fontSize: 17.0,fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8.0),
               TextField(
@@ -153,10 +158,10 @@ print("asdfhlk ks");
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 16.0),
+              SizedBox(height: 17.0),
               Text(
-                'Problem Description:',
-                style: TextStyle(fontSize: 16.0),
+                ' Description :',
+                style: TextStyle(fontSize: 17.0,fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8.0),
               TextField(
@@ -172,10 +177,14 @@ print("asdfhlk ks");
               Row(
                 children: <Widget>[
                   ElevatedButton(
+
                     onPressed: () {
                       selectImage();
+
                     },
-                    child: Text('Upload Image'),
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
+                    child: Text('Upload Image',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),
+                    ),
                   ),
                   SizedBox(width: 16.0),
                   Expanded(
@@ -186,9 +195,9 @@ print("asdfhlk ks");
                         width: 80,
                         height: 80,
                         decoration: BoxDecoration(
-                          color: Color(0xFFC5C6d0),
+                          color: Colors.transparent,
                         ),
-                        child: Icon(Icons.home, size: 40),
+                        // child: Icon(Icons.home, size: 40),
                       )
                           : Container(
                         width: 200,
@@ -203,30 +212,35 @@ print("asdfhlk ks");
                 ],
               ),
 
-              SizedBox(height: 16.0),
-              Row(
-                children: <Widget>[
-                  InkWell(
-                    onTap: (){
-                      print(widget.name);
-                      print(widget.price);
-                      storeData( work:widget.name, price:widget.price);
-                    },
-                    child: Expanded(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          print(widget.name);
-                          print(widget.price);
+              SizedBox(height: 26.0),
+              InkWell(
 
-                          storeData(work:widget.name,price:widget.price.toInt());
-                        },
-                        child: Text('Submit'),
-
-                      ),
+                onTap: (){
+                  storeData(work:widget.name,price:widget.price.toInt());
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+color: Colors.white,
+                    border: Border.all(
+                      width: 1,
+                      color: Colors.black,
                     ),
-
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
-                ],
+
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.shopping_cart, color: Colors.black,),
+                      SizedBox(
+                        width: 10,height: 55,
+                      ),
+                      Text('Submit', style: TextStyle(fontSize: 20, color: Colors.black,fontWeight: FontWeight.bold),)
+
+
+                    ],
+                  ),
+                ),
               ),
             ],
           ),

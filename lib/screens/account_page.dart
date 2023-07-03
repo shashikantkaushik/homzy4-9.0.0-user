@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
+
 import 'package:homzy1/auth.dart';
-import 'dart:convert';
-import 'package:homzy1/screens/edit_profile.dart';
+
 import 'package:homzy1/screens/about.dart';
 import 'package:provider/provider.dart';
 import 'package:homzy1/screens/WelcomeScreen.dart';
@@ -10,7 +9,7 @@ import 'package:homzy1/screens/history.dart';
 import 'package:homzy1/screens/profile_screen.dart';
 import 'package:homzy1/screens/faq_screen.dart';
 import 'package:kommunicate_flutter/kommunicate_flutter.dart';
-//import 'package:kommunicate_flutter/kommunicate_flutter.dart';
+
 class SubSetting extends StatefulWidget {
   @override
   State<SubSetting> createState() => _SubSettingState();
@@ -93,7 +92,7 @@ class _SubSettingState extends State<SubSetting> {
 
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const EditProfile()),
+                  MaterialPageRoute(builder: (context) => const Profile()),
                 );
               },
               child: Container(
@@ -222,7 +221,7 @@ class _SubSettingState extends State<SubSetting> {
             InkWell(
               onTap: (){
                 dynamic conversationObject = {
-                  'appId': '271c5068d5c645603b47da5653855ac76',// The [APP_ID](https://dashboard.kommunicate.io/settings/install) obtained from kommunicate dashboard.
+                  'appId': '24b188427eb21cddb27882c3ee1ffae54',// The [APP_ID](https://dashboard.kommunicate.io/settings/install) obtained from kommunicate dashboard.
                 };
 
                 KommunicateFlutterPlugin.buildConversation(conversationObject)

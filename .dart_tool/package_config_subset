@@ -2,6 +2,10 @@ _flutterfire_internals
 2.18
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/_flutterfire_internals-1.1.1/
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/_flutterfire_internals-1.1.1/lib/
+archive
+2.12
+file:///Users/shashikant/.pub-cache/hosted/pub.dev/archive-3.3.7/
+file:///Users/shashikant/.pub-cache/hosted/pub.dev/archive-3.3.7/lib/
 async
 2.18
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/async-2.10.0/
@@ -38,6 +42,10 @@ collection
 2.12
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/collection-1.17.0/
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/collection-1.17.0/lib/
+convert
+2.18
+file:///Users/shashikant/.pub-cache/hosted/pub.dev/convert-3.1.1/
+file:///Users/shashikant/.pub-cache/hosted/pub.dev/convert-3.1.1/lib/
 country_picker
 2.12
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/country_picker-2.0.20/
@@ -46,6 +54,10 @@ cross_file
 2.17
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/cross_file-0.3.3+4/
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/cross_file-0.3.3+4/lib/
+crypto
+2.19
+file:///Users/shashikant/.pub-cache/hosted/pub.dev/crypto-3.0.3/
+file:///Users/shashikant/.pub-cache/hosted/pub.dev/crypto-3.0.3/lib/
 cupertino_icons
 2.12
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.5/
@@ -106,6 +118,10 @@ flutter_plugin_android_lifecycle
 2.12
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.9/
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.9/lib/
+flutter_rating_bar
+2.14
+file:///Users/shashikant/.pub-cache/hosted/pub.dev/flutter_rating_bar-4.0.1/
+file:///Users/shashikant/.pub-cache/hosted/pub.dev/flutter_rating_bar-4.0.1/lib/
 font_awesome_flutter
 2.12
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/font_awesome_flutter-10.4.0/
@@ -194,6 +210,10 @@ lints
 2.17
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/lints-2.0.1/
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/lints-2.0.1/lib/
+lottie
+2.18
+file:///Users/shashikant/.pub-cache/hosted/pub.dev/lottie-2.3.2/
+file:///Users/shashikant/.pub-cache/hosted/pub.dev/lottie-2.3.2/lib/
 matcher
 2.18
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/matcher-0.12.13/
@@ -238,6 +258,10 @@ plugin_platform_interface
 2.17
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.4/
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.4/lib/
+pointycastle
+2.14
+file:///Users/shashikant/.pub-cache/hosted/pub.dev/pointycastle-3.7.3/
+file:///Users/shashikant/.pub-cache/hosted/pub.dev/pointycastle-3.7.3/lib/
 process
 2.14
 file:///Users/shashikant/.pub-cache/hosted/pub.dev/process-4.2.4/

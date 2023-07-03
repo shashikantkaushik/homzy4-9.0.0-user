@@ -111,13 +111,13 @@ class _UserInfromationScreenState extends State<UserInfromationScreen> {
 
                             TextField(
                               decoration: InputDecoration(
-                                hintText: "Enter Your Mail Here",
+                                hintText: "Enter Your UPI Here",
                                 icon: Icon(Icons.edit, color: Color(0xFFC5C6d0),
                                     size: 30),
                               ),
-                              keyboardType: TextInputType.emailAddress,
+                              keyboardType: TextInputType.text,
                               maxLines: 1,
-                              controller: emailController,
+                              controller: upiController,
                             ),
                           ],
                         ),
@@ -193,7 +193,7 @@ class _UserInfromationScreenState extends State<UserInfromationScreen> {
     UserModel userModel = UserModel(
       name: nameController.text.trim(),
       email: emailController.text.trim(),
-
+      upi: upiController.text.trim(),
       profilePic: "",
       createdAt: "",
       phoneNumber: "",

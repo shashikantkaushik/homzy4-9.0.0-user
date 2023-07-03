@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homzy1/auth.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:carousel_pro/carousel_pro.dart';
@@ -49,10 +49,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late FirebaseFirestore _firebaseFirestore;
   Position? _currentPosition;
   String? _currentAddress;
 
-  Widget SalonServiceConatiner(BuildContext context, String img, String name1, String name2, int price, String desc, String image){
+  Widget SalonServiceConatiner(BuildContext context, String img, String name1, String name2, int price, String desc, String image, int Time){
     return  Container(
       //   width: 200,
       child: Column(
@@ -73,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => ServiceInfo (name: name1 + name2, img: Image.asset(image), price: price, desc: desc,)),
+                          MaterialPageRoute(builder: (context) => ServiceInfo (name: name1 + name2, img: Image.asset(image), price: price, desc: desc, Time:Time)),
                         );
                       },
                       child: ClipRRect(
@@ -115,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-  Widget ServiceCategories(BuildContext context, String img , String name1, String name2, int price, String desc, String image){
+  Widget ServiceCategories(BuildContext context, String img , String name1, String name2, int price, String desc, String image,int Time){
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -134,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ServiceInfo(name: name1 + name2, img: Image.asset(image), price: price, desc: desc,)),
+                        MaterialPageRoute(builder: (context) => ServiceInfo(name: name1 + name2, img: Image.asset(image), price: price, desc: desc,Time:Time)),
                       );
                     },
                     child: ClipRRect(
@@ -186,6 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
   Future<Position> _getGeoLocationPosition() async {
+
     bool serviceEnabled;
     LocationPermission permission;
 
@@ -230,7 +232,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    _firebaseFirestore = FirebaseFirestore.instance;
     _getGeoLocationPosition().then((position) => GetAddressFromLatLong(position));
+
   }
   Widget build(BuildContext context) {
     final ap = Provider.of<AuthProvider>(context, listen: false); 
@@ -243,16 +247,23 @@ class _HomeScreenState extends State<HomeScreen> {
     final date=(ap.userModel.createdAt);
     // final DatabaseReference databaseReference = FirebaseDatabase.instance.reference().child('messages');
     final t = (ap.userModel.name);
+    final photo=(ap.userModel.profilePic);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:  Colors.white,
+        backgroundColor:  Colors.teal,
          elevation: 0.5,
         centerTitle: false,
+automaticallyImplyLeading: false,
+        title: Text("Hello , $t",
 
-        title: Text("Hello, $t",
         style:TextStyle(
-          color: Colors.black
-        )),
+          color: Colors.white,
+         // fontWeight: FontWeight.bold
+
+        )
+
+        ),
+
         actions: [
           GestureDetector(
             onTap: () {
@@ -264,41 +275,101 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               );
             },
-            child: CircleAvatar(
+            child: Row(
+              children:[   Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                ),
+                child: CircleAvatar(
+                  radius: 40, // adjust as needed
+                  backgroundImage: NetworkImage('$photo'),
+                //  foregroundImage: AssetImage('assets/robot.jpeg'), // placeholder image
+                  // child: Icon(Icons.person, size: 40, color: Colors.white), // optional child icon
+                )
 
-              backgroundImage: NetworkImage(ap.userModel.profilePic),
-              backgroundColor: Color(0xFF189AB4),
-              radius: 50,
+            ),
+
+
+
+
+
+                SizedBox(width: 10,)
+    ]
             ),
           )
 
         ],
+
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child:
         Column(
           children: [
+            // Container(
+            //   padding: EdgeInsets.all(16.0),
+            //   child: Row(
+            //     children: [
+            //       Icon(Icons.location_on),
+            //       SizedBox(width: 16.0),
+            //
+            //         Column(
+            //          //mainAxisAlignment: MainAxisAlignment.start,
+            //           //textDirection: TextDirection.ltr,
+            //           children: [
+            //
+            //             Text('${Address}',textAlign: TextAlign.left,),
+            //       Text('${Address2}',textAlign: TextAlign.left,),
+            //           ],
+            //         ),
+            //
+            //     ],
+            //   ),
+            // )
+            // ,
             Container(
-              padding: EdgeInsets.all(16.0),
-              child: Row(
-                children: [
-                  Icon(Icons.location_on),
-                  SizedBox(width: 16.0),
-               
-                    Column(
-                     //mainAxisAlignment: MainAxisAlignment.start,
-                      //textDirection: TextDirection.ltr,
-                      children: [
+                              padding: EdgeInsets.all(16.0),
+                              child: Column(
+                                children:[ Row(
+                                  children: [
+                                    Icon(
+                                      Icons.location_on,
+                                      color: Colors.redAccent,
+                                    ),
+                                    SizedBox(width: 8.0),
+                                    Flexible(
+                                      child: Text(
+                                        '$Address',
+                                        maxLines: null,
+                                        overflow: TextOverflow.clip,
+                                      ),
+                                    ),
+                                    SizedBox(width: 12,)
 
-                        Text('${Address}',textAlign: TextAlign.left,),
-                  Text('${Address2}',textAlign: TextAlign.left,),
-                      ],
+                                  ],
+                                ),
+
+              Row(
+                children: [
+                  // Icon(
+                  //   Icons.location_on,
+                  //   color: Colors.redAccent,
+                  // ),
+                  SizedBox(width: 32.0),
+                  Flexible(
+                    child: Text(
+                      '$Address2',
+                      maxLines: null,
+                      overflow: TextOverflow.clip,
                     ),
-                  
+                  ),
+
                 ],
               ),
-            ),
+]
+    )  ),
             SizedBox(
               height: 10,
             ),
@@ -431,46 +502,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => CarpenterServiceScreen()),
-                        );
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Color(0xFFe9e4f4),
-                        ),
-                        margin: EdgeInsets.only(left: 10, right: 10),
-                        height: 100,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CircleAvatar(
-                              child: Image.asset("assets/images/painting.png", height: 50, width: 50),
-                            ),
 
-                            SizedBox(height: 8),
-                            Padding(
-                              padding: EdgeInsets.all(0.5),
-                              child: Center(
-                                child: Text(
-                                  "Carpenter",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.black54,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
@@ -1099,6 +1132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("299"),
                       "A men's haircut typically involves using scissors or clippers to cut the hair to a desired length or style.",
                       "assets/salon_men/child_hari_cut.jpeg",
+                      int.parse("20"),
                     ),
                     SalonServiceConatiner(context,
                       "assets/salon_men/men_shaving.jpeg",
@@ -1107,6 +1141,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("149"),
                       " This can involve using shaving cream or gel to lubricate the skin and help the razor glide smoothly over the face.",
                       "assets/salon_men/men_shaving_4.1.jpeg",
+                      int.parse("20"),
                     ),
                     SalonServiceConatiner(context,
                       "assets/salon_men/men_hair_color.jpeg",
@@ -1115,6 +1150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("999"),
                       "This can involve using a hair dye or other coloring product to add color to the hair, or to cover up gray hairs.",
                       "assets/salon_men/men_color_3.3.png",
+                      int.parse("25"),
                     ),
                     SalonServiceConatiner(context,
                       "assets/salon_men/facila_treatment.jpeg",
@@ -1123,6 +1159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("599"),
                       "A facial treatment is a skincare procedure designed to improve the appearance and health of a man's facial skin.",
                       "assets/salon_men/facial_trement_2.0.webp",
+                      int.parse("40"),
                     ),
                   ],
                 ),
@@ -1141,6 +1178,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("499"),
                       "This can include cutting the hair to a certain length or style, as well as shaping the hair around the face, sides, and back of the head.",
                       "assets/salon_women/hair_cutt_women_5.2.jpeg",
+                      int.parse("50"),
                     ),
                     SalonServiceConatiner(context,
                       "assets/salon_women/hair_color.jpeg",
@@ -1149,6 +1187,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("2549"),
                       "This can involve using a hair dye or other coloring product to add color to the hair, or to cover up gray hairs.",
                       "assets/salon_women/coloring hair_women_sec.jpeg",
+                      int.parse("30"),
                     ),
 
                     SalonServiceConatiner(context,
@@ -1158,6 +1197,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("599"),
                       "Manicure and pedicure treatments are procedures designed to improve the appearance and health of a woman's hands, feet, and nails.",
                       "assets/salon_women/manicure_3.1.jpeg",
+                      int.parse("60"),
                     ),
                     SalonServiceConatiner(context,
                       "assets/salon_women/glow.jpeg",
@@ -1166,6 +1206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("8999"),
                       "This can include makeup for special events or occasions, such as photo shoots, or everyday makeup for work or social situations.",
                       "assets/salon_women/makup_women_3.1.webp",
+                      int.parse("20"),
                     ),
                   ],
                 ),
@@ -1241,6 +1282,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("250"),
                       "Faucet repair and installation involve fixing or installing the plumbing fixture that controls the flow of water in a sink, bathtub, or shower.",
                       "assets/sub_service/plumber_image/faucet_4.1.webp",
+                      int.parse("45"),
                     ),
 
                     ServiceCategories(context,
@@ -1250,6 +1292,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("350"),
                       "Pipe repair involves fixing or replacing damaged pipes that carry water, gas, or other fluids throughout a building.",
                       "assets/sub_service/plumber_image/pipe_4.1.webp",
+                      int.parse("40"),
                     ),
                     ServiceCategories(context,
                       "assets/sub_service/plumber_image/water_heater.png",
@@ -1258,6 +1301,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("799"),
                       "Water heater repair and installation involve fixing or installing the system that provides hot water to a building.",
                       "assets/sub_service/plumber_image/water_heater_3.3.jpeg",
+                      int.parse("50"),
                     ),
                     ServiceCategories(context,
                       "assets/sub_service/plumber_image/water_system_3.2.jpeg",
@@ -1266,6 +1310,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("1000"),
                       "Water system repair and installation involve fixing or installing the plumbing system that provides potable water to a building.",
                       "assets/sub_service/plumber_image/water_system_3.2.jpeg",
+                      int.parse("40"),
                     ),
                   ],
                 ),
@@ -1303,6 +1348,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("599"),
                       "This can include repairing or replacing damaged components such as the compressor, condenser, or refrigerant lines, or cleaning and tuning up the system to improve its efficiency and performance.",
                       "assets/sub_service/Electric_image/ac_repair_3.3.jpeg",
+                      int.parse("60"),
                     ),
                     ServiceCategories(context,
                       "assets/sub_service/Electric_image/Lighting.jpeg",
@@ -1311,6 +1357,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("350"),
                       "This can include repairing or replacing damaged components such as light fixtures, switches, or wiring, installing new lighting altogether.",
                       "assets/sub_service/Electric_image/lighting_3.3.webp",
+                      int.parse("35"),
                     ),
                     ServiceCategories(context,
                       "assets/sub_service/Electric_image/referegator-repairing-large.jpg",
@@ -1319,6 +1366,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("169"),
                       "This can include repairing or replacing damaged components such as the compressor, condenser, or evaporator fan, or cleaning and tuning up the system to improve its efficiency and performance.",
                       "assets/sub_service/Electric_image/referegator-repairing-large.jpg",
+                      int.parse("45"),
                     ),
                     ServiceCategories(context,
                       "assets/sub_service/Electric_image/washing_image.jpg",
@@ -1327,6 +1375,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       int.parse("150"),
                       "This can include repairing or replacing damaged components such as the motor, belts, or agitator, or cleaning and tuning up the machine to improve its efficiency and performance.",
                       "assets/sub_service/Electric_image/washing_machine_3.2.jpeg",
+                      int.parse("50"),
                     ),
                   ],
                 ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:homzy1/screens/takedata_page.dart';
-import 'package:homzy1/screens/small_services_small_contianer .dart';
 
 
 class ServiceInfo extends StatefulWidget {
@@ -8,12 +7,14 @@ class ServiceInfo extends StatefulWidget {
   final Widget img;
   final int price;
   final String desc;
+  final int Time;
   const ServiceInfo({
     Key? key,
     required this.name,
     required this.img,
     required this.price,
     required this.desc,
+    required this.Time,
   }) : super(key: key);
 
 
@@ -73,38 +74,31 @@ class _ServiceInfoState extends State<ServiceInfo> {
               style: TextStyle(color: Colors.black54, fontSize: 20),
             ),
 
-            Container(
-              height: 55,
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+            InkWell(
+              onTap: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LocationScreen(price: widget.price,name: serviceName,),
+                    ));
+              },
+              child: Container(
+                decoration: BoxDecoration(
+
+                  border: Border.all(
+                    width: 1,
+                    color: Colors.black,
                   ),
-                  backgroundColor: Colors.white70,
-                  textStyle: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
                 ),
-                child:  Row(
+
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.shopping_cart, color: Colors.black,),
                     SizedBox(
-                      width: 10,
+                      width: 10,height: 55,
                     ),
-                    TextButton(
-                      onPressed: () {
-                        // Navigate to a new screen
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => LocationScreen(price: widget.price,name: serviceName,),
-                        ));
-                      },
-                      child:Text('Book', style: TextStyle(fontSize: 20, color: Colors.black),),
-                    )
+                    Text('Book', style: TextStyle(fontSize: 20, color: Colors.black,fontWeight: FontWeight.bold),)
 
 
                   ],
