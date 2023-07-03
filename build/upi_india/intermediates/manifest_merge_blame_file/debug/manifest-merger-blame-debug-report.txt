@@ -1,0 +1,151 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.az.upi_india" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="16"
+6-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml
+7        android:targetSdkVersion="16" />
+7-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml
+8
+9    <queries>
+9-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:3:3-8:13
+10        <intent>
+10-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:4:5-7:14
+11            <action android:name="android.intent.action.VIEW" />
+11-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:5:7-59
+11-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:5:15-56
+12
+13            <data android:scheme="upi" />
+13-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:6:7-36
+13-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:6:13-33
+14        </intent>
+15    </queries>
+16    <queries>
+16-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:3:3-8:13
+17        <package android:name="com.lcode.allahabadupi" />
+17-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:10:5-54
+17-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:10:14-51
+18        <package android:name="in.amazon.mShop.android.shopping" />
+18-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:11:5-64
+18-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:11:14-61
+19        <package android:name="com.upi.axispay" />
+19-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:12:5-47
+19-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:12:14-44
+20        <package android:name="com.bankofbaroda.upi" />
+20-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:13:5-52
+20-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:13:14-49
+21        <package android:name="in.org.npci.upiapp" />
+21-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:14:5-50
+21-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:14:14-47
+22        <package android:name="com.infra.boiupi" />
+22-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:15:5-48
+22-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:15:14-45
+23        <package android:name="com.infrasofttech.centralbankupi" />
+23-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:16:5-64
+23-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:16:14-61
+24        <package android:name="in.cointab.app" />
+24-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:17:5-46
+24-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:17:14-43
+25        <package android:name="com.lcode.corpupi" />
+25-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:18:5-49
+25-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:18:14-46
+26        <package android:name="com.lcode.csbupi" />
+26-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:19:5-48
+26-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:19:14-45
+27        <package android:name="com.cub.wallet.gui" />
+27-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:20:5-50
+27-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:20:14-47
+28        <package android:name="com.dbs.in.digitalbank" />
+28-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:21:5-54
+28-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:21:14-51
+29        <package android:name="com.olive.dcb.upi" />
+29-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:22:5-49
+29-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:22:14-46
+30        <package android:name="com.equitasbank.upi" />
+30-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:23:5-51
+30-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:23:14-48
+31        <package android:name="com.finopaytech.bpayfino" />
+31-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:24:5-56
+31-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:24:14-53
+32        <package android:name="com.freecharge.android" />
+32-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:25:5-54
+32-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:25:14-51
+33        <package android:name="com.google.android.apps.nbu.paisa.user" />
+33-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:26:5-70
+33-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:26:14-67
+34        <package android:name="com.mgs.hsbcupi" />
+34-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:27:5-47
+34-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:27:14-44
+35        <package android:name="com.csam.icici.bank.imobile" />
+35-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:28:5-59
+35-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:28:14-56
+36        <package android:name="com.mgs.induspsp" />
+36-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:29:5-48
+36-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:29:14-45
+37        <package android:name="com.lcode.smartz" />
+37-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:30:5-48
+37-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:30:14-45
+38        <package android:name="com.khaalijeb.inkdrops" />
+38-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:31:5-54
+38-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:31:14-51
+39        <package android:name="com.msf.kbank.mobile" />
+39-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:32:5-52
+39-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:32:14-49
+40        <package android:name="com.infrasofttech.mahaupi" />
+40-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:33:5-57
+40-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:33:14-54
+41        <package android:name="com.mipay.in.wallet" />
+41-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:34:5-51
+41-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:34:14-48
+42        <package android:name="com.mipay.wallet.in" />
+42-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:35:5-51
+42-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:35:14-48
+43        <package android:name="com.mobikwik_new" />
+43-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:36:5-48
+43-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:36:14-45
+44        <package android:name="com.mgs.obcbank" />
+44-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:37:5-47
+44-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:37:14-44
+45        <package android:name="net.one97.paytm" />
+45-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:38:5-47
+45-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:38:14-44
+46        <package android:name="com.idbibank.paywiz" />
+46-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:39:5-51
+46-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:39:14-48
+47        <package android:name="com.enstage.wibmo.hdfc" />
+47-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:40:5-54
+47-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:40:14-51
+48        <package android:name="com.phonepe.app" />
+48-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:41:5-47
+48-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:41:14-44
+49        <package android:name="com.fss.pnbpsp" />
+49-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:42:5-46
+49-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:42:14-43
+50        <package android:name="com.mobileware.upipsb" />
+50-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:43:5-53
+50-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:43:14-50
+51        <package android:name="com.rblbank.upi" />
+51-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:44:5-47
+51-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:44:14-44
+52        <package android:name="com.realmepay.payments" />
+52-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:45:5-54
+52-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:45:14-51
+53        <package android:name="com.sbi.upi" />
+53-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:46:5-43
+53-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:46:14-40
+54        <package android:name="com.truecaller" />
+54-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:47:5-46
+54-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:47:14-43
+55        <package android:name="com.fss.unbipsp" />
+55-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:48:5-47
+55-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:48:14-44
+56        <package android:name="com.fss.vijayapsp" />
+56-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:49:5-49
+56-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:49:14-46
+57        <package android:name="com.YesBank" />
+57-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:50:5-43
+57-->/Users/shashikant/.pub-cache/hosted/pub.dev/upi_india-3.0.1/android/src/main/AndroidManifest.xml:50:14-40
+58    </queries>
+59
+60</manifest>
